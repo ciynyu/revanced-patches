@@ -2,6 +2,26 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android" xmlns:yt="http://schemas.android.com/apk/res-auto">
 
+    <!-- PREFERENCE_SCREEN: SPOOFING
+    <PreferenceScreen android:title="@string/revanced_preference_screen_spoofing_title" android:key="revanced_preference_screen_spoofing">PREFERENCE_SCREEN: SPOOFING -->
+        <!-- SETTINGS: SPOOF_APP_VERSION
+        <PreferenceCategory android:title="@string/revanced_spoof_app_version_title">
+            <SwitchPreference android:title="@string/revanced_spoof_app_version_title" android:key="revanced_spoof_app_version" android:summaryOn="@string/revanced_spoof_app_version_summary_on" android:summaryOff="@string/revanced_spoof_app_version_summary_off" />
+            <app.revanced.extension.shared.settings.preference.WideListPreference android:title="@string/revanced_spoof_app_version_target_entry_title" android:key="revanced_spoof_app_version_target" android:entries="@array/revanced_spoof_app_version_target_entries" android:entryValues="@array/revanced_spoof_app_version_target_entry_values" />
+            <app.revanced.extension.shared.settings.preference.ResettableEditTextPreference android:title="@string/revanced_spoof_app_version_target_title" android:key="revanced_spoof_app_version_target" android:summary="@string/revanced_spoof_app_version_target_summary" android:inputType="text" android:dependency="revanced_spoof_app_version" />
+        </PreferenceCategory>SETTINGS: SPOOF_APP_VERSION -->
+        <!-- SETTINGS: FREEZE_LAYOUT_UPDATES
+        <PreferenceCategory android:title="@string/revanced_freeze_layout_updates_category_title">
+            <app.revanced.extension.youtube.settings.preference.FreezeLayoutUpdatesPreference android:title="@string/revanced_freeze_layout_updates_title" android:key="revanced_freeze_layout_updates" android:summary="@string/revanced_freeze_layout_updates_summary" />
+            <EditTextPreference android:title="@string/revanced_frozen_hot_config_group_title" android:key="revanced_frozen_hot_config_group" />
+            <EditTextPreference android:title="@string/revanced_frozen_hot_hash_data_title" android:key="revanced_frozen_hot_hash_data" />
+            <EditTextPreference android:title="@string/revanced_frozen_cold_config_group_title" android:key="revanced_frozen_cold_config_group" />
+            <EditTextPreference android:title="@string/revanced_frozen_cold_hash_data_title" android:key="revanced_frozen_cold_hash_data" />
+            <SwitchPreference android:title="@string/revanced_disable_server_side_layout_title" android:key="revanced_disable_layout_updates" android:summary="@string/revanced_disable_server_side_layout_summary" />
+        </PreferenceCategory>SETTINGS: FREEZE_LAYOUT_UPDATES -->
+    <!-- PREFERENCE_SCREEN: SPOOFING
+    </PreferenceScreen>PREFERENCE_SCREEN: SPOOFING -->
+
     <!-- PREFERENCE_SCREEN: ADS
     <PreferenceScreen android:title="@string/revanced_preference_screen_ads_title" android:key="revanced_preference_screen_ads">
         <SwitchPreference android:title="@string/revanced_hide_creator_store_shelf_title" android:key="revanced_hide_creator_store_shelf" android:summaryOn="@string/revanced_hide_creator_store_shelf_summary_on" android:summaryOff="@string/revanced_hide_creator_store_shelf_summary_off" />
@@ -1034,6 +1054,7 @@
                 <Preference android:title="Translations" android:summary="@string/revanced_patches_excluded" android:selectable="false"/>
                 <Preference android:title="Visual preferences icons" android:summary="@string/revanced_patches_excluded" android:selectable="false"/>
                 <Preference android:title="Add missing resources" android:summary="@string/revanced_patches_excluded" android:selectable="false"/>
+                <Preference android:title="Freeze layout updates" android:summary="@string/revanced_patches_excluded" android:selectable="false"/>
             </PreferenceCategory>
         </PreferenceScreen>
     </PreferenceScreen>
