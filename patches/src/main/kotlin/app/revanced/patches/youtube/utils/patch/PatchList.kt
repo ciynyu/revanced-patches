@@ -272,5 +272,9 @@ internal enum class PatchList(
     WATCH_HISTORY(
         "Watch history",
         "Adds an option to change the domain of the watch history or check its status."
+    ),
+    ADD_MISSING_RESOURCES(
+        "Add missing resources",
+        "Add missing resources to prevent crashes in 17.34.36. Currently, only a few resources are supported. Also, replace missing drawables with a transparent image to prevent crashes."
     )
 }
