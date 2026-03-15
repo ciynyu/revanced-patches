@@ -78,6 +78,21 @@ internal fun indexOfEntrySetInstruction(method: Method) =
                 getReference<MethodReference>().toString() == "Ljava/util/Map;->entrySet()Ljava/util/Set;"
     }
 
+internal val clientParameterFingerprint = legacyFingerprint(
+    name = "clientParameterFingerprint",
+    accessFlags = AccessFlags.PUBLIC or AccessFlags.CONSTRUCTOR,
+    strings = listOf(
+        "cplatform",
+        "c",
+        "cver",
+        "cos",
+        "cosver",
+        "csdk",
+        "cbr",
+        "cbrver",
+    )
+)
+
 internal val clientTypeFingerprint = legacyFingerprint(
     name = "clientTypeFingerprint",
     opcodes = listOf(

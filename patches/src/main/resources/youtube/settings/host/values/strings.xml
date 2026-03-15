@@ -695,8 +695,11 @@ If later turned off, it is recommended to clear the app data to prevent UI bugs.
     <string name="revanced_spoof_app_version_target_entry_19_26_42">19.26.42 - Disable Cairo icon in navigation and toolbar</string>
     <string name="revanced_spoof_app_version_target_entry_19_28_42">19.28.42 - Restore old playlist header</string>
     <string name="revanced_spoof_app_version_target_entry_19_33_37">19.33.37 - Restore old playback speed flyout panel</string>
+    <string name="revanced_spoof_app_version_target_entry_20_02_41">20.02.41 - Oldest working version</string>
     <string name="revanced_spoof_app_version_target_entry_20_05_46">20.05.46 - Restore Transcript functionality</string>
     <string name="revanced_spoof_app_version_target_entry_20_13_41">20.13.41 - Restore non collapsed video action bar</string>
+    <string name="revanced_spoof_app_version_target_entry_20_23_40">20.23.40</string>
+    <string name="revanced_spoof_app_version_target_entry_20_24_40">20.24.40 - Visual styles are broken since this version</string>
     <string name="revanced_spoof_app_version_other_item">Other</string>
     <string name="revanced_spoof_app_version_other_item_hint">Enter the app version</string>
     <string name="revanced_spoof_app_version_target_invalid_toast">Invalid spoof app version: %s.</string>

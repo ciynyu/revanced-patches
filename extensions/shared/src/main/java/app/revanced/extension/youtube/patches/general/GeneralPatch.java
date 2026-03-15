@@ -252,7 +252,7 @@ public class GeneralPatch {
     }
 
     public static String getWatchNextEndpointVersionOverride() {
-        return "19.26.42";
+        return Settings.SPOOF_APP_VERSION_TARGET.get();
     }
 
     // endregion

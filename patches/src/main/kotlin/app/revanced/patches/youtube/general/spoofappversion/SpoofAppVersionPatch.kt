@@ -6,6 +6,7 @@ import app.revanced.patcher.extensions.InstructionExtensions.getInstruction
 import app.revanced.patcher.patch.bytecodePatch
 import app.revanced.patcher.patch.resourcePatch
 import app.revanced.patcher.util.smali.ExternalLabel
+import app.revanced.patches.shared.clientParameterFingerprint
 import app.revanced.patches.shared.spoof.appversion.baseSpoofAppVersionPatch
 import app.revanced.patches.youtube.utils.CAIRO_FRAGMENT_FEATURE_FLAG
 import app.revanced.patches.youtube.utils.cairoFragmentConfigFingerprint
@@ -46,8 +47,15 @@ private val spoofAppVersionBytecodePatch = bytecodePatch(
     )
 
     execute {
-        if (!is_19_26_or_greater) {
-            return@execute
+        // Spoof parameters (cver, cbrver) in URL
+        clientParameterFingerprint.methodOrThrow().apply {
+            addInstructions(
+                0,
+                """
+                invoke-static {p2}, $GENERAL_CLASS_DESCRIPTOR->getVersionOverride(Ljava/lang/String;)Ljava/lang/String;
+                move-result-object p2
+                """
+            )
         }
 
         findMethodOrThrow(PATCH_STATUS_CLASS_DESCRIPTOR) {
@@ -110,14 +118,6 @@ val spoofAppVersionPatch = resourcePatch(
     SPOOF_APP_VERSION.title,
     SPOOF_APP_VERSION.summary,
 ) {
-    compatibleWith(
-        YOUTUBE_PACKAGE_NAME(
-            "19.43.41",
-            "19.44.39",
-            "19.47.53",
-            "20.05.46",
-        ),
-    )
 
     dependsOn(
         baseSpoofAppVersionPatch("$GENERAL_CLASS_DESCRIPTOR->getVersionOverride(Ljava/lang/String;)Ljava/lang/String;"),
@@ -127,10 +127,6 @@ val spoofAppVersionPatch = resourcePatch(
     )
 
     execute {
-        if (!is_19_26_or_greater) {
-            printWarn("\"${SPOOF_APP_VERSION.title}\" is not supported in this version. Use YouTube 19.43.41 or later.")
-            return@execute
-        }
 
         var settingArray = arrayOf(
             "PREFERENCE_SCREEN: GENERAL",
